@@ -28,6 +28,12 @@ gem "haml"
 
 group :development, :test do
   gem "pry-rails"
+  gem "rspec-rails", "~> 3.1.0"
+  gem "factory_girl", "~> 4.5.0"
+end
+
+group :test do
+  gem "capybara", "~> 2.6.2"
 end
 
 group :development do
