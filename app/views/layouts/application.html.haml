@@ -12,6 +12,8 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    %p.alert.alert-danger= alert
-    %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
+    - if notice
+      %p.alert.alert-success= notice
     = yield
