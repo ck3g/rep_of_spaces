@@ -8,6 +8,7 @@ gem "devise", "~> 4.0.0.rc1"
 
 gem 'puma'
 
+gem "bootstrap", "~> 4.0.0.alpha3"
 gem 'sass-rails', '~> 5.0'
 
 gem 'uglifier', '>= 1.3.0'
