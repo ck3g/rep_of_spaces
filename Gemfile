@@ -5,6 +5,7 @@ gem 'rails', '>= 5.0.0.beta2', '< 5.1'
 
 gem 'pg', '~> 0.18'
 gem "devise", "~> 4.0.0.rc1"
+gem "simple_form", "~> 3.2.1"
 
 gem 'puma'
 
