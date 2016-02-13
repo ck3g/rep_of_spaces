@@ -4,3 +4,5 @@
   %ul.nav.navbar-nav.pull-xs-right
     %li.nav-item{ class: ("active" if current_page?(new_user_session_path))}
       = link_to "Log in", new_user_session_path, class: 'nav-link'
+    %li.nav-item{ class: ("active" if current_page?(new_user_registration_path))}
+      = link_to "Sign up", new_user_registration_path, class: 'nav-link'
