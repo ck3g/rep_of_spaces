@@ -17,8 +17,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'turbolinks'
-
 # Action Cable dependencies for the Redis adapter
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
