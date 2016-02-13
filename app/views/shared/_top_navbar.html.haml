@@ -2,7 +2,11 @@
   = link_to "Rep of Spaces", root_path, class: "navbar-brand"
   %ul.nav.navbar-nav
   %ul.nav.navbar-nav.pull-xs-right
-    %li.nav-item{ class: ("active" if current_page?(new_user_session_path))}
-      = link_to "Log in", new_user_session_path, class: 'nav-link'
-    %li.nav-item{ class: ("active" if current_page?(new_user_registration_path))}
-      = link_to "Sign up", new_user_registration_path, class: 'nav-link'
+    - if user_signed_in?
+      %li.nav-item
+        = link_to "Sign out", destroy_user_session_path, class: 'nav-link'
+    - else
+      %li.nav-item{ class: ("active" if current_page?(new_user_session_path))}
+        = link_to "Log in", new_user_session_path, class: 'nav-link'
+      %li.nav-item{ class: ("active" if current_page?(new_user_registration_path))}
+        = link_to "Sign up", new_user_registration_path, class: 'nav-link'
