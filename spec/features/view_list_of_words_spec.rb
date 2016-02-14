@@ -8,7 +8,9 @@ feature "View list of the Words" do
     create :word, content: "Brot"
 
     sign_in_as "user@example.com"
-    visit words_path
+    within "nav.navbar" do
+      click_link "Words"
+    end
 
     within "#words" do
       expect(page).to have_content "Wasser"

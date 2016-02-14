@@ -1,12 +1,11 @@
 %nav.navbar.navbar-light.bg-faded
   = link_to "Rep of Spaces", root_path, class: "navbar-brand"
   %ul.nav.navbar-nav
+    - if user_signed_in?
+      = nav_link_to "Words", words_path
   %ul.nav.navbar-nav.pull-xs-right
     - if user_signed_in?
-      %li.nav-item
-        = link_to "Sign out", destroy_user_session_path, class: 'nav-link'
+      = nav_link_to "Sign out", destroy_user_session_path
     - else
-      %li.nav-item{ class: ("active" if current_page?(new_user_session_path))}
-        = link_to "Log in", new_user_session_path, class: 'nav-link'
-      %li.nav-item{ class: ("active" if current_page?(new_user_registration_path))}
-        = link_to "Sign up", new_user_registration_path, class: 'nav-link'
+      = nav_link_to "Log in", new_user_session_path
+      = nav_link_to "Sign up", new_user_registration_path
