@@ -6,5 +6,5 @@
   %tbody
     - @words.each do |word|
       %tr
-        %td= word.content
+        %td= link_to word.content, word
         %td= word.last_practiced_at
