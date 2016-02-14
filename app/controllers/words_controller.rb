@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  before_action :find_word, only: [:show, :destroy]
+  before_action :find_word, only: [:show, :edit, :update, :destroy]
 
   def index
     @words = current_user.words.all
@@ -18,6 +18,17 @@ class WordsController < ApplicationController
       redirect_to words_path, notice: "You have added one more word"
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @word.update_attributes safe_params
+      redirect_to words_path, notice: "You have successully updated the word"
+    else
+      render :edit
     end
   end
 

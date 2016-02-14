@@ -18,4 +18,5 @@
           %td= link_to word.content, word
           %td= word.last_practiced_at
           %td
+            = link_to "Edit", [:edit, word]
             = link_to "Delete", word, method: :delete, data: { confirm: "Are you sure?" }

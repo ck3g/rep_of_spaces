@@ -12,7 +12,7 @@ feature "Add new Word" do
       fill_in "word_content", with: "Wasser"
       fill_in "word_translation", with: "Water"
       fill_in "word_excerpt", with: "Ich trinke Wasser"
-      click_button "Add"
+      click_button "Create"
     end
 
     expect(page).to have_content "You have added one more word"
