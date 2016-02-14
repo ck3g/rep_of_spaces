@@ -1,13 +1,18 @@
-%table#words.table
-  %thead
-    %tr
-      %td Word
-      %td Last Practiced
-      %td
-  %tbody
-    - @words.each do |word|
+#words
+  %div
+    = @words.count
+    Words
+
+  %table.table.table-striped
+    %thead
       %tr
-        %td= link_to word.content, word
-        %td= word.last_practiced_at
+        %td Word
+        %td Last Practiced
         %td
-          = link_to "Delete", word, method: :delete, data: { confirm: "Are you sure?" }
+    %tbody
+      - @words.each do |word|
+        %tr
+          %td= link_to word.content, word
+          %td= word.last_practiced_at
+          %td
+            = link_to "Delete", word, method: :delete, data: { confirm: "Are you sure?" }

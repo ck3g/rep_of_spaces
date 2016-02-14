@@ -5,6 +5,7 @@ feature "View list of the Words" do
     user = create :user_example_com
 
     create :word, user: user, content: "Wasser"
+    create :word, user: user, content: "Käse"
     create :word, content: "Brot"
 
     sign_in_as "user@example.com"
@@ -13,7 +14,9 @@ feature "View list of the Words" do
     end
 
     within "#words" do
+      expect(page).to have_content "2 Words"
       expect(page).to have_content "Wasser"
+      expect(page).to have_content "Käse"
       expect(page).not_to have_content "Brot"
     end
   end
