@@ -1,3 +1,10 @@
-#words
-  - @words.each do |word|
-    = word.content
+%table#words.table
+  %thead
+    %tr
+      %td Word
+      %td Last Practiced
+  %tbody
+    - @words.each do |word|
+      %tr
+        %td= word.content
+        %td= word.last_practiced_at
