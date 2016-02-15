@@ -1,4 +1,6 @@
 class WordsController < ApplicationController
+  authorize_resource
+
   before_action :find_word, only: [:show, :edit, :update, :destroy]
 
   def index
