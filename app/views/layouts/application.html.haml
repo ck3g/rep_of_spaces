@@ -12,11 +12,13 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
+    = render 'shared/top_navbar'
+    - if alert
+      %p.alert.alert-danger= alert
+    - if notice
+      %p.alert.alert-success= notice
+
     .container-fluid
       .row
-        = render 'shared/top_navbar'
-        - if alert
-          %p.alert.alert-danger= alert
-        - if notice
-          %p.alert.alert-success= notice
-        = yield
+        .col-lg-12
+          = yield

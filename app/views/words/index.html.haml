@@ -1,22 +1,28 @@
-%h1
-  Words
-  = link_to "+ Add", new_word_path, class: "btn btn-success"
+.row
+  .col-lg-12.m-b-1.p-t-3
+    %h1
+      Words
+      = link_to "+ Add", new_word_path, class: "btn btn-success-outline"
 #words
-  %div
-    = @words.count
-    Words
+  .row
+    .col-lg-12.p-b-3
+      = @words.count
+      Words
 
-  %table.table.table-striped
-    %thead
-      %tr
-        %td Word
-        %td Last Practiced
-        %td
-    %tbody
-      - @words.each do |word|
-        %tr
-          %td= link_to word.content, word
-          %td= word.last_practiced_at
-          %td
-            = link_to "Edit", [:edit, word]
-            = link_to "Delete", word, method: :delete, data: { confirm: "Are you sure?" }
+  .row
+    .col-lg-12
+      %table.table.table-striped
+        %thead.thead-inverse
+          %tr
+            %th Word
+            %th Last Practiced
+            %th
+        %tbody
+          - @words.each do |word|
+            %tr
+              %td= link_to word.content, word
+              %td= word.last_practiced_at
+              %td
+                .pull-lg-right
+                  = link_to "Edit", [:edit, word], class: "btn btn-sm btn-primary-outline"
+                  = link_to "Delete", word, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger-outline"
