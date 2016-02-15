@@ -15,7 +15,7 @@ class WordsController < ApplicationController
   def create
     @word = current_user.words.new safe_params
     if @word.save
-      redirect_to words_path, notice: "You have added one more word"
+      redirect_to words_path, notice: t("views.words.created_successfully")
     else
       render :new
     end
@@ -26,7 +26,7 @@ class WordsController < ApplicationController
 
   def update
     if @word.update_attributes safe_params
-      redirect_to words_path, notice: "You have successully updated the word"
+      redirect_to words_path, notice: t("views.words.updated_successfully")
     else
       render :edit
     end

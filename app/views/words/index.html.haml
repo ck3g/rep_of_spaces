@@ -1,21 +1,21 @@
 .row
   .col-lg-12.m-b-1.p-t-3
     %h1
-      Words
-      = link_to "+ Add", new_word_path, class: "btn btn-success-outline"
+      = t("entities.words")
+      = link_to t("views.words.add"), new_word_path, class: "btn btn-success-outline"
 #words
   .row
     .col-lg-12.p-b-3
       = @words.count
-      Words
+      = t("views.words.count", count: @words.count)
 
   .row
     .col-lg-12
       %table.table.table-striped
         %thead.thead-inverse
           %tr
-            %th Word
-            %th Last Practiced
+            %th= Word.human_attribute_name(:content)
+            %th= Word.human_attribute_name(:last_practiced_at)
             %th
         %tbody
           - @words.each do |word|

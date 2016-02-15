@@ -2,10 +2,10 @@
   = link_to "Rep of Spaces", root_path, class: "navbar-brand"
   %ul.nav.navbar-nav
     - if user_signed_in?
-      = nav_link_to "Words", words_path
+      = nav_link_to t("top_navbar.words"), words_path
   %ul.nav.navbar-nav.pull-xs-right
     - if user_signed_in?
-      = nav_link_to "Sign out", destroy_user_session_path
+      = nav_link_to t("top_navbar.sign_out"), destroy_user_session_path
     - else
-      = nav_link_to "Log in", new_user_session_path
-      = nav_link_to "Sign up", new_user_registration_path
+      = nav_link_to t("top_navbar.sign_in"), new_user_session_path
+      = nav_link_to t("top_navbar.sign_up"), new_user_registration_path
