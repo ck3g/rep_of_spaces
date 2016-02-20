@@ -22,6 +22,8 @@ en:
         other: Words
       created_successfully: "You have added one more word"
       updated_successfully: "You have successully updated the word"
+    practice:
+      title: Practice
 
   top_navbar:
     words: Words
