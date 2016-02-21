@@ -9,6 +9,12 @@ jQuery ->
     1: "#translation"
   }
 
+  showResultButtons = () ->
+    $("a.hint").remove()
+    $("a.check").remove()
+    $("#was_wrong").removeClass("hidden-xs-up")
+    $("#was_right").removeClass("hidden-xs-up")
+
   $(document).on "click", "a.hint", (e) ->
     e.preventDefault()
 
@@ -19,4 +25,8 @@ jQuery ->
     hintsUsed += 1
     hintsExists = availableHints[hintsUsed]
     unless hintsExists?
-      $(e.target).remove()
+      showResultButtons()
+
+  $(document).on "click", "a.check", (e) ->
+    e.preventDefault()
+    showResultButtons()

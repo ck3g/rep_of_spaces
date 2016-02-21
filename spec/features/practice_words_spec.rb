@@ -23,7 +23,7 @@ feature "Words practice" do
 
       expect(page).to have_content "Wasser"
       expect(page).to have_selector "a", text: "Hint"
-      expect(page).to have_selector "a", text: "Next"
+      expect(page).to have_selector "a", text: "Check"
     end
   end
 end
