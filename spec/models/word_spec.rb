@@ -16,4 +16,16 @@ RSpec.describe Word, type: :model do
       it { is_expected.to validate_presence_of :content }
     end
   end
+
+  describe ".weak" do
+    let!(:strong_word) { create :word, :strong }
+    let!(:weak_word) { create :word, :weak }
+    let!(:new_word) { create :word }
+
+    subject { Word.weak }
+
+    it "returns only weak words for practice" do
+      is_expected.to contain_exactly(weak_word, new_word)
+    end
+  end
 end

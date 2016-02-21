@@ -2,11 +2,11 @@ class PracticesController < ApplicationController
   authorize_resource class: false
 
   def new
-    @word = current_user.words.sample
+    @word = current_user.words.weak.sample
   end
 
   def create
-    UpdateWordStatus.new(Word.find(params[:id]), result)
+    UpdateWordStatus.new(Word.find(params[:id]), result).call
     redirect_to new_practice_path
   end
 
