@@ -11,7 +11,13 @@
           %p#translation.hidden-xs-up= @word.translation
           = link_to "Hint", "#hint", class: "btn btn-warning-outline hint"
           = link_to "Check", new_practice_path, class: "btn btn-primary-outline check"
-          = link_to "I was wrong", new_practice_path, id: "was_wrong", class: "btn btn-danger-outline hidden-xs-up"
-          = link_to "I was right", new_practice_path, id: "was_right", class: "btn btn-success-outline hidden-xs-up"
+          = link_to "I was wrong", practice_path(id: @word.id, result: "failed_repetition"),
+            id: "was_wrong",
+            class: "btn btn-danger-outline hidden-xs-up",
+            method: :post
+          = link_to "I was right", practice_path(id: @word.id, result: "successful_repetition"),
+            id: "was_right",
+            class: "btn btn-success-outline hidden-xs-up",
+            method: :post
         - else
           = t("views.words.you_have_no_words_to_practice")
