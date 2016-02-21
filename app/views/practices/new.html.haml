@@ -3,6 +3,13 @@
     %h1= t("views.practice.title")
 .row
   .col-lg-offset-3.col-lg-6
-    .card.card-block.text-lg.center
+    .card.card-block.text-lg-center
       %p.card-text
-        = t("views.words.you_have_no_words_to_practice")
+        - if @word
+          %h3.card-title= @word.content
+          = simple_format @word.excerpt, id: "excerpt", class: "hidden-xs-up"
+          %p#translation.hidden-xs-up= @word.translation
+          = link_to "Hint", "#hint", class: "btn btn-warning-outline hint"
+          = link_to "Next", new_practice_path, class: "btn btn-primary-outline"
+        - else
+          = t("views.words.you_have_no_words_to_practice")
