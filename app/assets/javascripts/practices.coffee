@@ -29,4 +29,5 @@ jQuery ->
 
   $(document).on "click", "a.check", (e) ->
     e.preventDefault()
+    $("#translation").removeClass("hidden-xs-up")
     showResultButtons()
