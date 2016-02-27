@@ -1,6 +1,7 @@
 class UpdateWordStatus
-  def initialize(word, result)
+  def initialize(word, result, repetition_calculator: RepetitionCalculator)
     @word, @result = word, result
+    @repetition_calculator = repetition_calculator
   end
 
   def call
@@ -13,17 +14,13 @@ class UpdateWordStatus
 
   private
 
-  attr_reader :word, :result
+  attr_reader :word, :result, :repetition_calculator
 
   def next_repetition_at
-    result_time.from_now
+    repetition_calculator.calculate(strength_level).from_now
   end
 
-  def result_time
-    if result == :successful_repetition
-      1.hour
-    else
-      30.minutes
-    end
+  def strength_level
+    result == :successful_repetition ? 2 : 1
   end
 end
