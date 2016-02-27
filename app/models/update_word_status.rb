@@ -8,7 +8,8 @@ class UpdateWordStatus
     word.update_columns(
       next_repetition_at: next_repetition_at,
       practices_count: word.practices_count + 1,
-      last_practiced_at: Time.current
+      last_practiced_at: Time.current,
+      strength_level: strength_level
     )
   end
 
@@ -21,6 +22,10 @@ class UpdateWordStatus
   end
 
   def strength_level
-    result == :successful_repetition ? 2 : 1
+    [word.strength_level + strength_delta, 0].max
+  end
+
+  def strength_delta
+    result == :successful_repetition ? 1 : -1
   end
 end
