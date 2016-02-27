@@ -24,7 +24,7 @@ RSpec.describe UpdateWordStatus do
       let(:result) { :failed_repetition }
 
       it "moves next repetition 30 minutes forward" do
-        expect(word.next_repetition_at.to_s).to eq 30.minutes.from_now.to_s
+        expect(word.next_repetition_at.to_s).to eq 20.minutes.from_now.to_s
       end
 
       context "when strength_level is 2" do
@@ -44,7 +44,7 @@ RSpec.describe UpdateWordStatus do
 
     context "when result is successful_repetition" do
       it "moves next repetition 1 hour forward" do
-        expect(word.next_repetition_at.to_s).to eq 1.hour.from_now.to_s
+        expect(word.next_repetition_at.to_s).to eq 24.hours.from_now.to_s
       end
 
       it "increases strength_level" do
