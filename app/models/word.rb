@@ -7,4 +7,8 @@ class Word < ApplicationRecord
     where('next_repetition_at < ? OR next_repetition_at IS NULL',
           DateTime.current)
   }
+
+  def available_hints
+    { excerpt: excerpt }.reject { |_, v| v.blank? }
+  end
 end

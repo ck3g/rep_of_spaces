@@ -4,10 +4,13 @@
 
 jQuery ->
   hintsUsed = 0
-  availableHints = {
-    0: "#excerpt",
-    1: "#translation"
-  }
+  hintsCount = 0
+  availableHints = {}
+  for hintName of $("#available_hints").data()
+    availableHints[hintsCount] = "##{hintName}"
+    hintsCount += 1
+
+  availableHints[hintsCount] = "#translation"
 
   showResultButtons = () ->
     $("a.hint").remove()

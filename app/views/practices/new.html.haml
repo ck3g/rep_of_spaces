@@ -6,6 +6,7 @@
     .card.card-block.text-lg-center
       %p.card-text
         - if @word
+          = hidden_field_tag :available_hints, nil, data: @word.available_hints
           %h3.card-title= @word.content
           = simple_format @word.excerpt, id: "excerpt", class: "hidden-xs-up"
           %p#translation.hidden-xs-up= @word.translation
