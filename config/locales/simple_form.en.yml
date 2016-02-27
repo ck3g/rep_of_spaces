@@ -23,6 +23,11 @@ en:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
+    hints:
+      word:
+        content: The word you want to learn
+        translation: "The translation of that word (answer)"
+        excerpt: "One or several examples of word usage"
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'
