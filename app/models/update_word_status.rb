@@ -4,7 +4,11 @@ class UpdateWordStatus
   end
 
   def call
-    word.update_column :next_repetition_at, next_repetition_at
+    word.update_columns(
+      next_repetition_at: next_repetition_at,
+      practices_count: word.practices_count + 1,
+      last_practiced_at: Time.current
+    )
   end
 
   private

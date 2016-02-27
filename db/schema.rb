@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221115043) do
+ActiveRecord::Schema.define(version: 20160227182052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,14 +34,16 @@ ActiveRecord::Schema.define(version: 20160221115043) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.integer  "user_id",            null: false
-    t.string   "content",            null: false
+    t.integer  "user_id",                        null: false
+    t.string   "content",                        null: false
     t.string   "translation"
     t.text     "excerpt"
     t.datetime "last_practiced_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.datetime "next_repetition_at"
+    t.integer  "practices_count",    default: 0, null: false
+    t.index ["practices_count"], name: "index_words_on_practices_count", using: :btree
     t.index ["user_id"], name: "index_words_on_user_id", using: :btree
   end
 
