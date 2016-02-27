@@ -22,13 +22,14 @@ en:
         other: Words
       created_successfully: "You have added one more word"
       updated_successfully: "You have successully updated the word"
+      start_learning: Start learning
     practice:
       title: Practice
 
   top_navbar:
     words: Words
-    auth:
-      sign_in: Log in
-      sign_up: Sign up
-      sign_out: Sign out
+  auth:
+    sign_in: Log in
+    sign_up: Sign up
+    sign_out: Sign out
 

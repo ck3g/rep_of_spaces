@@ -1,2 +1,13 @@
-
-%h1 Rep of Spaces
+= content_for :welcome_header do
+  .home-header
+    = image_tag "welcome_page_bg.png", class: "img-responsive"
+    .intro-text
+      %h1 Rep of Spaces
+      %p.now
+        helps you learn new words using Spaced Repetition technique
+      %p.link
+        - if user_signed_in?
+          = link_to t("views.words.start_learning"), words_path, class: "btn btn-success"
+        - else
+          = link_to t("auth.sign_in"), new_user_session_path, class: "btn btn-success"
+          = link_to t("auth.sign_up"), new_user_registration_path, class: "btn btn-success"

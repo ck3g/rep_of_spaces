@@ -5,7 +5,7 @@
       = nav_link_to t("top_navbar.words"), words_path
   %ul.nav.navbar-nav.pull-xs-right
     - if user_signed_in?
-      = nav_link_to t("top_navbar.sign_out"), destroy_user_session_path
+      = nav_link_to t("auth.sign_out"), destroy_user_session_path
     - else
-      = nav_link_to t("top_navbar.sign_in"), new_user_session_path
-      = nav_link_to t("top_navbar.sign_up"), new_user_registration_path
+      = nav_link_to t("auth.sign_in"), new_user_session_path
+      = nav_link_to t("auth.sign_up"), new_user_registration_path
