@@ -9,6 +9,7 @@ feature "Add new Word" do
     click_link "+ Add"
 
     within "#new_word" do
+      select "Neuter", from: "word_gender"
       fill_in "word_content", with: "Wasser"
       fill_in "word_translation", with: "Water"
       fill_in "word_synonyms", with: "Saft"

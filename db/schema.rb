@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309193134) do
+ActiveRecord::Schema.define(version: 20160309193824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160309193134) do
     t.integer  "strength_level",     default: 0, null: false
     t.string   "synonyms"
     t.string   "antonyms"
+    t.string   "gender"
     t.index ["practices_count"], name: "index_words_on_practices_count", using: :btree
     t.index ["user_id"], name: "index_words_on_user_id", using: :btree
   end
