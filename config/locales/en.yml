@@ -6,6 +6,7 @@ en:
         last_practiced_at: Last Practiced
         translation: Translation
         synonyms: "Synonyms ≈"
+        antonyms: "Antonyms ↔"
   entities:
     words: Words
   helpers:
