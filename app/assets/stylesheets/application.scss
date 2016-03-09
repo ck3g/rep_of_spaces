@@ -33,3 +33,27 @@ h3 {
   text-align: center;
   line-height: 300%;
 }
+
+span.gender {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+
+  &.gender-masculine {
+    background: #2795ee;
+  }
+
+  &.gender-feminine {
+    background: #ed5c65;
+  }
+
+  &.gender-neuter {
+    background: #5cb85c;
+  }
+
+  &.gender-plural {
+    background: #ffd700;
+  }
+}
