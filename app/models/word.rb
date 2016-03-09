@@ -9,6 +9,9 @@ class Word < ApplicationRecord
   }
 
   def available_hints
-    { excerpt: excerpt }.reject { |_, v| v.blank? }
+    {
+      synonyms: synonyms,
+      excerpt: excerpt
+    }.reject { |_, v| v.blank? }
   end
 end

@@ -46,6 +46,6 @@ class WordsController < ApplicationController
   end
 
   def safe_params
-    params.require(:word).permit(:content, :translation, :excerpt)
+    params.require(:word).permit(:content, :translation, :excerpt, :synonyms)
   end
 end

@@ -5,6 +5,7 @@ en:
         content: Word
         last_practiced_at: Last Practiced
         translation: Translation
+        synonyms: "Synonyms ≈"
   entities:
     words: Words
   helpers:

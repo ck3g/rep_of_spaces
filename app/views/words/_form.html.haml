@@ -3,6 +3,7 @@
     = simple_form_for word, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f|
       = f.input :content
       = f.input :translation
+      = f.input :synonyms
       = f.input :excerpt, as: :text
       .col-lg-offset-2.col-lg-10
         = f.button :submit, class: "btn btn-primary", :"disable-with" => "Wait..."

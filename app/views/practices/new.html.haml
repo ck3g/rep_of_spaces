@@ -9,6 +9,9 @@
           = hidden_field_tag :available_hints, nil, data: @word.available_hints
           %h3.card-title= @word.content
           = simple_format @word.excerpt, id: "excerpt", class: "hidden-xs-up"
+          %p#synonyms.hidden-xs-up
+            = "≈"
+            = @word.synonyms
           %p#translation.hidden-xs-up= @word.translation
           = link_to "Hint", "#hint", class: "btn btn-warning-outline hint"
           = link_to "Check", new_practice_path, class: "btn btn-primary-outline check"
