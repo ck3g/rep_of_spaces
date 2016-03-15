@@ -1,7 +1,7 @@
 class RepetitionCalculator
   def self.calculate(strength_level)
     {
-      0 => 1.minute,
+      0 => 5.minute,
       1 => 20.minutes,
       2 => 8.hours,
       3 => 24.hours,
