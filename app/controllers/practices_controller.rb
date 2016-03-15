@@ -2,7 +2,7 @@ class PracticesController < ApplicationController
   authorize_resource class: false
 
   def new
-    @word = current_user.words.weak.sample
+    @word = WordPresenter.new(current_user.words.weak.sample)
   end
 
   def create

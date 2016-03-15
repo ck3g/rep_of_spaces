@@ -5,7 +5,7 @@
   .col-lg-offset-3.col-lg-6
     .card.card-block.text-lg-center
       %p.card-text
-        - if @word
+        - if @word.present?
           = hidden_field_tag :available_hints, nil, data: @word.available_hints
           %h3.card-title
             - if @word.gender.present?
