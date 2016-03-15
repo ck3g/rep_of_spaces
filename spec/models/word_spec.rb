@@ -21,11 +21,12 @@ RSpec.describe Word, type: :model do
     let!(:strong_word) { create :word, :strong }
     let!(:weak_word) { create :word, :weak }
     let!(:new_word) { create :word }
+    let!(:very_weak_word) { create :word, next_repetition_at: 1.hour.ago }
 
     subject { Word.weak }
 
     it "returns only weak words for practice" do
-      is_expected.to contain_exactly(weak_word, new_word)
+      is_expected.to contain_exactly(new_word, very_weak_word, weak_word)
     end
   end
 

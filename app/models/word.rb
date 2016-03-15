@@ -4,8 +4,10 @@ class Word < ApplicationRecord
   validates :user, :content, presence: true
 
   scope :weak, -> {
-    where('next_repetition_at < ? OR next_repetition_at IS NULL',
-          DateTime.current)
+    where(
+      'next_repetition_at < ? OR next_repetition_at IS NULL',
+      DateTime.current
+    ).order(:next_repetition_at)
   }
 
   def available_hints
