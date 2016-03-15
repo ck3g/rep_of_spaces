@@ -22,10 +22,7 @@
           - @words.each do |word|
             %tr
               %td= link_to word.content, word
-              %td
-                - if word.last_practiced_at
-                  = time_ago_in_words(word.last_practiced_at)
-                  ago
+              %td= word_time_ago_in_words(word)
               %td
                 .pull-lg-right
                   = link_to "Edit", [:edit, word], class: "btn btn-sm btn-primary-outline"

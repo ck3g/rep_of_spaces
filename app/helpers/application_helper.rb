@@ -5,4 +5,12 @@ module ApplicationHelper
       link_to text, path, class: "nav-link"
     end
   end
+
+  def word_time_ago_in_words(word)
+    if word.last_practiced_at
+      time_ago_in_words(word.last_practiced_at) + " #{t("views.words.practiced_at_ago")}"
+    else
+      t("views.words.never_practiced_at")
+    end
+  end
 end

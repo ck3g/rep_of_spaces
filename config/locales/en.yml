@@ -25,6 +25,8 @@ en:
       created_successfully: "You have added one more word"
       updated_successfully: "You have successully updated the word"
       start_learning: Start learning
+      practiced_at_ago: ago
+      never_practiced_at: never
     practice:
       title: Practice
 
