@@ -7,7 +7,7 @@ class Word < ApplicationRecord
     where(
       'next_repetition_at < ? OR next_repetition_at IS NULL',
       DateTime.current
-    ).order(:next_repetition_at)
+    ).order("words.next_repetition_at NULLS FIRST")
   }
 
   def available_hints

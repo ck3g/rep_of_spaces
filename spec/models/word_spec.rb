@@ -26,7 +26,7 @@ RSpec.describe Word, type: :model do
     subject { Word.weak }
 
     it "returns only weak words for practice" do
-      is_expected.to contain_exactly(new_word, very_weak_word, weak_word)
+      is_expected.to eq [new_word, very_weak_word, weak_word]
     end
   end
 
