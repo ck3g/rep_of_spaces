@@ -32,5 +32,9 @@ jQuery ->
 
   $(document).on "click", "a.check", (e) ->
     e.preventDefault()
+
+    for hintName of $("#available_hints").data()
+      $("##{hintName}").removeClass("hidden-xs-up")
+
     $("#translation").removeClass("hidden-xs-up")
     showResultButtons()
