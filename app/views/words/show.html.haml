@@ -3,8 +3,7 @@
     .card.card-block.text-lg-center.text-xs-center
       %p.card-text
         %h3.card-title
-          - if @word.gender.present?
-            %span.gender{class: "gender-#{@word.gender}"}
+          = gender_icon @word
           = @word.content
         = simple_format @word.excerpt, class: "hidden-xs-up"
         - if @word.synonyms.present?

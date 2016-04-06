@@ -13,4 +13,9 @@ module ApplicationHelper
       t("views.words.never_practiced_at")
     end
   end
+
+  def gender_icon(word)
+    return if word&.gender.blank?
+    content_tag :span, "", class: "gender gender-#{word.gender}"
+  end
 end

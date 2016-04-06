@@ -8,8 +8,7 @@
         - if @word.present?
           = hidden_field_tag :available_hints, nil, data: @word.available_hints
           %h3.card-title
-            - if @word.gender.present?
-              %span.gender{class: "gender-#{@word.gender}"}
+            = gender_icon @word
             = @word.content
           = simple_format @word.excerpt, id: "excerpt", class: "hidden-xs-up"
           %p#synonyms.hidden-xs-up= "≈ #{@word.synonyms}"

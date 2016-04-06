@@ -21,7 +21,9 @@
         %tbody
           - @words.each do |word|
             %tr
-              %td= link_to word.content, word
+              %td
+                = gender_icon word
+                = link_to word.content, word
               %td= word_time_ago_in_words(word)
               %td
                 .pull-lg-right
