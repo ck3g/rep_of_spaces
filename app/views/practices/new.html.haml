@@ -3,9 +3,11 @@
     %h1= t("views.practice.title")
 .row
   .col-lg-offset-3.col-lg-6
-    .card.card-block.text-lg-center.text-xs-center
+    .card.card-block.text-lg-center.text-xs-center{ class: gender_class(@word) }
       %p.card-text
         - if @word.present?
+          = link_to "Edit", [:edit, @word], class: "btn btn-sm btn-primary-outline float-right"
+          .clearfix
           = hidden_field_tag :available_hints, nil, data: @word.available_hints
           %h3.card-title
             = gender_icon @word

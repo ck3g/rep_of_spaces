@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def gender_class(word)
-    return if word&.gender.blank?
+    return if word.try(:gender).blank?
     "gender-#{word.gender}"
   end
 end
