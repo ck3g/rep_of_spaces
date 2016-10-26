@@ -14,15 +14,15 @@
           %p#synonyms.hidden-xs-up= "≈ #{@word.synonyms}"
           %p#antonyms.hidden-xs-up= "↔ #{@word.antonyms}"
           %p#translation.translation.hidden-xs-up= @word.translation
-          = link_to "Hint", "#hint", class: "btn btn-warning-outline hint"
-          = link_to "Check", new_practice_path, class: "btn btn-primary-outline check"
+          = link_to "Hint", "#hint", class: "btn btn-warning-outline hint js-left-arrow"
+          = link_to "Check", new_practice_path, class: "btn btn-primary-outline check js-right-arrow"
           = link_to "I was wrong", practice_path(id: @word.id, result: "failed_repetition"),
             id: "was_wrong",
-            class: "btn btn-danger-outline hidden-xs-up",
+            class: "btn btn-danger-outline hidden-xs-up js-left-arrow",
             method: :post
           = link_to "I was right", practice_path(id: @word.id, result: "successful_repetition"),
             id: "was_right",
-            class: "btn btn-success-outline hidden-xs-up",
+            class: "btn btn-success-outline hidden-xs-up js-right-arrow",
             method: :post
         - else
           = t("views.words.you_have_no_words_to_practice")

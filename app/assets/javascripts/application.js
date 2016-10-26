@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(function() {
+  var LEFT_ARROW_KEY_CODE = 37
+  var RIGHT_ARROW_KEY_CODE = 39
+
+  $(document).on('keydown', function(e) {
+    if (e.keyCode === LEFT_ARROW_KEY_CODE) {
+      $("a.js-left-arrow:visible").click()
+      console.log("left arrow key pressed")
+    } else if (e.keyCode === RIGHT_ARROW_KEY_CODE) {
+      $("a.js-right-arrow:visible").click()
+    }
+  })
+})
