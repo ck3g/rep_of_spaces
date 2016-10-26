@@ -18,4 +18,9 @@ module ApplicationHelper
     return if word&.gender.blank?
     content_tag :span, "", class: "gender gender-#{word.gender}"
   end
+
+  def gender_class(word)
+    return if word&.gender.blank?
+    "gender-#{word.gender}"
+  end
 end

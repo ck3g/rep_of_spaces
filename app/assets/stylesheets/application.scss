@@ -1,6 +1,11 @@
 @import "bootstrap";
 @import "welcome";
 
+$color-gender-masculine: #2795ee;
+$color-gender-feminine: #ed5c65;
+$color-gender-neuter: #5cb85c;
+$color-gender-plural: #ffd700;
+
 .login-or {
   position: relative;
   font-size: 18px;
@@ -34,6 +39,24 @@ h3 {
   line-height: 300%;
 }
 
+.card {
+  &.gender-masculine {
+    border-color: $color-gender-masculine;
+  }
+
+  &.gender-feminine {
+    border-color: $color-gender-feminine;
+  }
+
+  &.gender-neuter {
+    border-color: $color-gender-neuter;
+  }
+
+  &.gender-plural {
+    border-color: $color-gender-plural;
+  }
+}
+
 h3.card-title {
   span.gender {
     margin-bottom: 5px;
@@ -47,19 +70,19 @@ span.gender {
   border-radius: 50%;
 
   &.gender-masculine {
-    background: #2795ee;
+    background: $color-gender-masculine;
   }
 
   &.gender-feminine {
-    background: #ed5c65;
+    background: $color-gender-feminine;
   }
 
   &.gender-neuter {
-    background: #5cb85c;
+    background: $color-gender-neuter;
   }
 
   &.gender-plural {
-    background: #ffd700;
+    background: $color-gender-plural;
   }
 }
 
