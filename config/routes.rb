@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resource :practice, only: [:new, :create]
 
+  get "categories/:category_id/words" => "words#index", as: :category_words
+
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
   root "welcome#index"

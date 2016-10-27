@@ -4,7 +4,7 @@ class WordsController < ApplicationController
   before_action :find_word, only: [:show, :edit, :update, :destroy]
 
   def index
-    @words = current_user.words.all
+    @words = current_user.words.by_category(category).all
   end
 
   def show
@@ -55,5 +55,10 @@ class WordsController < ApplicationController
     word.categories = params[:word][:categories_csv].to_s.split(",").map do |category_name|
       current_user.categories.find_or_create_by(name: category_name.strip)
     end
+  end
+
+  def category
+    return unless params[:category_id]
+    @category ||= current_user.categories.find params[:category_id]
   end
 end

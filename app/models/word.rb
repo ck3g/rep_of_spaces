@@ -5,6 +5,7 @@ class Word < ApplicationRecord
 
   validates :user, :content, presence: true
 
+  scope :by_category, -> (category) { category.words if category }
   scope :weak, -> {
     where(
       'next_repetition_at < ? OR next_repetition_at IS NULL',
