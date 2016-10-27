@@ -1,0 +1,17 @@
+.row
+  .col-lg-12
+    %h1
+      = t("entities.categories")
+
+#categories
+  .row
+    .col-lg-12.p-b-3
+      %table.table.table-stripped
+        %thead.thead-inverse
+          %tr
+            %th= Category.human_attribute_name(:name)
+        %tbody
+          - @categories.each do |category|
+            %tr
+              %td= category.name
+
