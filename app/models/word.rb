@@ -5,8 +5,6 @@ class Word < ApplicationRecord
 
   validates :user, :content, presence: true
 
-  attr_accessor :categories_csv
-
   scope :weak, -> {
     where(
       'next_repetition_at < ? OR next_repetition_at IS NULL',
@@ -20,5 +18,9 @@ class Word < ApplicationRecord
       synonyms: synonyms,
       excerpt: excerpt
     }.reject { |_, v| v.blank? }
+  end
+
+  def categories_csv
+    categories.pluck(:name).join(", ")
   end
 end
