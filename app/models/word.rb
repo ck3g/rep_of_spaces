@@ -1,7 +1,11 @@
 class Word < ApplicationRecord
   belongs_to :user
+  has_many :word_categories, dependent: :destroy
+  has_many :categories, through: :word_categories
 
   validates :user, :content, presence: true
+
+  attr_accessor :categories_csv
 
   scope :weak, -> {
     where(
