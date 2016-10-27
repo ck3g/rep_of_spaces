@@ -6,6 +6,18 @@ module ApplicationHelper
     end
   end
 
+  def link_to_practice(category)
+    if category
+      title = t("views.words.practice_category", name: category.name)
+      path = new_practice_path(category_id: category.id)
+    else
+      title = t("views.words.practice")
+      path = new_practice_path
+    end
+
+    link_to title, path, class: "btn btn-primary-outline"
+  end
+
   def word_time_ago_in_words(word)
     if word.last_practiced_at
       time_ago_in_words(word.last_practiced_at) + " #{t("views.words.practiced_at_ago")}"

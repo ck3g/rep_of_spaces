@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message
   end
+
+  def current_category
+    return unless params[:category_id] && current_user
+    @category ||= current_user.categories.find params[:category_id]
+  end
+  helper_method :current_category
 end

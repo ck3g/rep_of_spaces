@@ -2,12 +2,12 @@ class PracticesController < ApplicationController
   authorize_resource class: false
 
   def new
-    @word = WordPresenter.new(current_user.words.weak.first)
+    @word = WordPresenter.new(current_user.words.by_category(current_category).weak.first)
   end
 
   def create
     UpdateWordStatus.new(Word.find(params[:id]), result).call
-    redirect_to new_practice_path
+    redirect_to new_practice_path(category_id: current_category.try(:id))
   end
 
   private

@@ -17,12 +17,12 @@
           %p#antonyms.hidden-xs-up= "↔ #{@word.antonyms}"
           %p#translation.translation.hidden-xs-up= @word.translation
           = link_to "Hint", "#hint", class: "btn btn-warning-outline hint js-left-arrow"
-          = link_to "Check", new_practice_path, class: "btn btn-primary-outline check js-right-arrow"
-          = link_to "I was wrong", practice_path(id: @word.id, result: "failed_repetition"),
+          = link_to "Check", "#check", class: "btn btn-primary-outline check js-right-arrow"
+          = link_to "I was wrong", practice_path(id: @word.id, result: "failed_repetition", category_id: current_category.try(:id)),
             id: "was_wrong",
             class: "btn btn-danger-outline hidden-xs-up js-left-arrow",
             method: :post
-          = link_to "I was right", practice_path(id: @word.id, result: "successful_repetition"),
+          = link_to "I was right", practice_path(id: @word.id, result: "successful_repetition", category_id: current_category.try(:id)),
             id: "was_right",
             class: "btn btn-success-outline hidden-xs-up js-right-arrow",
             method: :post
