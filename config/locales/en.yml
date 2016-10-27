@@ -31,6 +31,8 @@ en:
       never_practiced_at: never
     practice:
       title: Practice
+    categories:
+      no_categories_yet: "You have no categories yet. You can add them from the create/update word page."
 
   top_navbar:
     words: Words
