@@ -1,6 +1,10 @@
 .row
   .col-lg-offset-3.col-lg-6
-    %h1= t("views.practice.title")
+    %h1
+      - if current_category
+        = t("views.practice.title_category", name: current_category.name)
+      - else
+        = t("views.practice.title")
 .row
   .col-lg-offset-3.col-lg-6
     .card.card-block.text-lg-center.text-xs-center{ class: gender_class(@word) }
