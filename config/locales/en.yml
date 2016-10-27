@@ -7,6 +7,7 @@ en:
         translation: Translation
         synonyms: "Synonyms ≈"
         antonyms: "Antonyms ↔"
+        categories_csv: Categories
   entities:
     words: Words
   helpers:
@@ -32,6 +33,7 @@ en:
 
   top_navbar:
     words: Words
+    categories: Categories
   auth:
     sign_in: Log in
     sign_up: Sign up

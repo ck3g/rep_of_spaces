@@ -7,5 +7,6 @@ RSpec.describe User, type: :model do
 
   describe ".associations" do
     it { is_expected.to have_many(:words).dependent :destroy }
+    it { is_expected.to have_many(:categories).dependent :destroy }
   end
 end

@@ -3,6 +3,7 @@
   %ul.nav.navbar-nav
     - if user_signed_in?
       = nav_link_to t("top_navbar.words"), words_path
+      = nav_link_to t("top_navbar.categories"), categories_path
   %ul.nav.navbar-nav.pull-xs-right
     - if user_signed_in?
       = nav_link_to t("auth.sign_out"), destroy_user_session_path

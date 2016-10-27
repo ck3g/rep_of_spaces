@@ -7,6 +7,8 @@ RSpec.describe Word, type: :model do
 
   describe ".associations" do
     it { is_expected.to belong_to :user }
+    it { is_expected.to have_many :categories }
+    it { is_expected.to have_many :word_categories }
   end
 
   describe ".validations" do

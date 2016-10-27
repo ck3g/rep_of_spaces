@@ -15,6 +15,7 @@ feature "Add new Word" do
       fill_in "word_synonyms", with: "Saft"
       fill_in "word_antonyms", with: "Luft"
       fill_in "word_excerpt", with: "Ich trinke Wasser"
+      fill_in "word_categories_csv", with: "Essen und Trinken, TOP 100 Words"
       click_button "Add"
     end
 
@@ -23,5 +24,6 @@ feature "Add new Word" do
       expect(page).to have_content "Wasser"
     end
     expect(Word.count).to eq 1
+    expect(Word.last.categories.pluck(:name)).to eq ["Essen und Trinken", "TOP 100 Words"]
   end
 end
