@@ -1,12 +1,17 @@
 %nav.navbar.navbar-light.bg-faded{class: ("container" unless controller_name == "welcome")}
   = link_to "Rep of Spaces", root_path, class: "navbar-brand"
-  %ul.nav.navbar-nav
-    - if user_signed_in?
-      = nav_link_to t("top_navbar.words"), words_path
-      = nav_link_to t("top_navbar.categories"), categories_path
-  %ul.nav.navbar-nav.pull-xs-right
-    - if user_signed_in?
-      = nav_link_to t("auth.sign_out"), destroy_user_session_path
-    - else
-      = nav_link_to t("auth.sign_in"), new_user_session_path
-      = nav_link_to t("auth.sign_up"), new_user_registration_path
+  %button.navbar-toggler.hidden-sm-up.collapsed.pull-xs-right{type: "button", data: { toggle: "collapse", target: "#navbar-header"}, :"aria-controls" => "navbar-header", :"aria-controls" => false, :"aria-label" => "Toggle navigation"}
+    = fa_icon "bars"
+  .hidden-sm-up
+    .clearfix
+  #navbar-header.navbar-toggleable-xs.collapse{:"aria-expanded" => false}
+    %ul.nav.navbar-nav
+      - if user_signed_in?
+        = nav_link_to t("top_navbar.words"), words_path
+        = nav_link_to t("top_navbar.categories"), categories_path
+    %ul.nav.navbar-nav.pull-xs-right
+      - if user_signed_in?
+        = nav_link_to t("auth.sign_out"), destroy_user_session_path
+      - else
+        = nav_link_to t("auth.sign_in"), new_user_session_path
+        = nav_link_to t("auth.sign_up"), new_user_registration_path
