@@ -13,5 +13,7 @@
         %tbody
           - @categories.each do |category|
             %tr
-              %td= category.name
+              %td
+                = category.name
+                = "(#{category.words_count} #{t("views.words.count", count: category.words_count)})"
 

@@ -17,7 +17,7 @@ feature "List of categories" do
     end
 
     within "#categories" do
-      expect(page).to have_selector "tr", text: "Getränke"
+      expect(page).to have_selector "tr", text: "Getränke (1 Word)"
     end
   end
 end
