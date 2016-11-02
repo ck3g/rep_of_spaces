@@ -7,7 +7,7 @@
       = f.input :synonyms
       = f.input :antonyms
       = f.input :excerpt, as: :text
-      = f.input :categories_csv, as: :string
+      = f.input :categories_csv, as: :string, input_html: { value: f.object.categories_csv.presence || params[:to_category] }
       .col-lg-offset-2.col-lg-10
         = f.button :submit, class: "btn btn-primary", :"disable-with" => "Wait..."
         = link_to "Cancel", words_path, class: "btn btn-link"

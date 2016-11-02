@@ -6,6 +6,17 @@ module ApplicationHelper
     end
   end
 
+  def link_to_new_word(category)
+    if category
+      title = t("views.words.add_to_category", name: category.name)
+      path = new_word_path(to_category: category.name)
+    else
+      title = t("views.words.add")
+      path = new_word_path
+    end
+    link_to title, path, class: "btn btn-success-outline"
+  end
+
   def link_to_practice(category)
     if category
       title = t("views.words.practice_category", name: category.name)

@@ -18,6 +18,7 @@ en:
   views:
     words:
       add: "+ Add"
+      add_to_category: '+ Add to "%{name}"'
       practice: Practice
       practice_category: 'Practice "%{name}"'
       you_have_no_words_to_practice: "You have no words to practice"

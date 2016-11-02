@@ -2,7 +2,7 @@
   .col-lg-12
     %h1
       = t("entities.words")
-      = link_to t("views.words.add"), new_word_path, class: "btn btn-success-outline"
+      = link_to_new_word current_category
       = link_to_practice current_category
 #words
   .row
